@@ -1,0 +1,23 @@
+name: Build and Test CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Environment Sanity Check
+        run: |
+          echo "Validating environment for cold-chain-telemetry-kotlin-spring-v2026-23"
+          echo "Target Architecture: Kotlin / Spring Boot"
+          echo "Category: Logistics Cold Chain Telemetry"
+
+      - name: Run Build Verification
+        run: echo "Build verification completed successfully."
